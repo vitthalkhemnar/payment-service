@@ -1,4 +1,4 @@
-package com.ecom.payment.service;
+package com.ecom.payment.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ecom.payment.dto.OrderRequest;
 import com.ecom.payment.dto.PaymentVerificationRequest;
+import com.ecom.payment.service.RazorpayService;
 import com.razorpay.RazorpayException;
 
 import lombok.RequiredArgsConstructor;
 
-@CrossOrigin("*")
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/payment")
