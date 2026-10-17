@@ -24,7 +24,7 @@ public class RazorpayService {
 		RazorpayClient client = new RazorpayClient(keyId, keySecret);
 
 		JSONObject options = new JSONObject();
-		options.put("amount", req.amount().intValue() * 100); // Razorpay expects amount in paise (1 INR = 100 paise)
+		options.put("amount", req.amount().movePointRight(2).intValue()); // Razorpay expects amount in paise (1 INR = 100 paise)
 		options.put("currency", "INR");
 		options.put("receipt", "txn_" + req.orderId());
 
